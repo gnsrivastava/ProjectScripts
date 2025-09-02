@@ -4,7 +4,7 @@
 #!/bin/bash
 
 # === Configuration ===
-IDS="lst"      # master input file
+IDS="lst"      # master input file containing list of FASTA files to be cleaned to remove any hypothetical proteins
 CHUNK_DIR="./chunks"   # where chunk files will live
 SCRIPT_DIR="./slurm_scripts"  # where per-chunk Slurm scripts will live
 LINES_PER_CHUNK=2000      # adjust to control number of chunks

@@ -16,6 +16,7 @@ b. Run Diamond: j vs i -> get top hits for each j, average the identities -> avg
 c. Overall similarity for pair (i,j) = (avg_i_j + avg_j_i) / 2
 Store the result in a matrix.
 
+Check line number 50, 70 & 71 to change delimiter according to your input filename
 END_COMMENT
 
 
@@ -48,7 +49,7 @@ echo "Found ${#FASTA_FILES[@]} FASTA files"
 # Create Diamond databases for all files
 echo "Creating Diamond databases..."
 for file in "${FASTA_FILES[@]}"; do
-    base_name=$(basename "$file" | cut -d. -f1)
+    base_name=$(basename "$file" | cut -d'_' -f1) # My files are named as genomeid_nonredundant.faa. Replace delimiter acording to the filename
     db_file="$OUTPUT_DIR/databases/${base_name}.dmnd"
     
     if [ ! -f "$db_file" ]; then
@@ -67,8 +68,8 @@ for i in "${!FASTA_FILES[@]}"; do
         if [ $i -lt $j ]; then  # Only process each pair once
             file1="${FASTA_FILES[$i]}"
             file2="${FASTA_FILES[$j]}"
-            base1=$(basename "$file1" | cut -d. -f1)
-            base2=$(basename "$file2" | cut -d. -f1)
+            base1=$(basename "$file1" | cut -d'_' -f1) # My files are named as genomeid_nonredundant.faa. Replace delimiter acording to the filename
+            base2=$(basename "$file2" | cut -d'_' -f1) # My files are named as genomeid_nonredundant.faa. Replace delimiter acording to the filename
             echo "$file1 $file2 $base1 $base2" >> "$PAIRS_FILE"
         fi
     done

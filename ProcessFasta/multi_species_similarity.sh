@@ -1,13 +1,22 @@
 #!/bin/bash 
 : <<'END_COMMENT'
+***********************************
+Author: Gopal Srivastava
+Date: Spet 8, 2025
+************************************
 Steps:
 
 Prepare a list of species (fasta files) in a directory.
 For each species, create a Diamond database.
 Then for each pair (i, j) where i != j, run the two Diamond searches and compute the average.
 
-Steps to get species similarity using diamond (https://github.com/bbuchfink/diamond)
+# ================================================
+Pre-requisites:
+Install Diamond for faster blastp (https://github.com/bbuchfink/diamond)
+Install Python3
+
 # ============================================
+Steps to get species similarity using diamond 
 
 1. Precompute databases for each species.
 For each unordered pair (i, j) with i != j, do:

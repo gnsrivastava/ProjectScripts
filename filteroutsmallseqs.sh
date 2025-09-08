@@ -15,7 +15,7 @@ infile = "{}"
 outfile = "filtered/${base}.faa"
 with open(outfile, "w") as out:
     SeqIO.write(
-        (r for r in SeqIO.parse(infile, "fasta") if len(r.seq) >= 50),
+        (r for r in SeqIO.parse(infile, "fasta") if len(r.seq) >= 50),       # Number of amino acid: peptide = 50 aa per seq
         out,
         "fasta"
     )

@@ -1,5 +1,14 @@
 #!/bin/bash
-#Note: Soft masking helps produce more biologically meaningful results by reducing the number of spurious, or false-positive, matches that arise from common, non-specific sequence patterns.
+: <<'END_COMMENT'
+
+Note: Soft masking helps produce more biologically meaningful results by reducing the number of spurious, or false-positive, 
+matches that arise from common, non-specific sequence patterns.
+
+** BLAST applies SEG, and uses soft masking by default in blastp. ** 
+So mentioning -soft_masking explicitly is upto the user
+
+
+END_COMMENT
 
 #BLASTP=${BLASTP:-blastp} # I have the location of the blastp in source file. Please uncomment according to your needs. 
 THREADS_PER_JOB=${THREADS_PER_JOB:-1}

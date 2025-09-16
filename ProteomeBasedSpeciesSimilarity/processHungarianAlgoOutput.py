@@ -8,7 +8,7 @@ from pathlib import Path
 DATA_DIR = Path(".")
 
 # Load number of sequences per species
-numberofseqs = pd.read_csv('../numberofseqs.txt', sep=':')
+numberofseqs = pd.read_csv('../numberofseqs.txt', sep=':') # contains the number of sequneces per fasta file created using `grep -c ">" *.faa`
 numberofseqs.Species = numberofseqs.Species.astype(str)
 
 # Dictionary to look up number of sequences by species ID

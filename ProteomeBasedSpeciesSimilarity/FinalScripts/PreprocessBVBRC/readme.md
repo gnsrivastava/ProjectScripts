@@ -40,5 +40,3 @@ sh Remove_Hypothetical_proteins.sh
 # Before running the script ensure that you have a cdhit conda environment in your server or system
 sh Remove_redundant_proteins.sh
 ```
-Step 4: Run diamond on these non-redundant sequences against STRING (Script: 
-Step 5: Run Hungarian Assignment (Script:

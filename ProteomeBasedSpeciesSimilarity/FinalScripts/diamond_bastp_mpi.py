@@ -9,6 +9,8 @@ import subprocess
 from itertools import product
 from typing import List, Tuple, Any, Dict
 
+# Note: On line 81, change the location of the diamond installtion
+
 # Initialize MPI
 COMM = MPI.COMM_WORLD
 RANK = COMM.Get_rank()
@@ -78,7 +80,7 @@ def run_diamond_single_pair(pair: Tuple[str, str], QPATH: str, TPATH: str, OUTPA
 
         # 3. Define DIAMOND command
         cmd = [
-            "/project/gsriva2/diamond", "blastp",
+            "/path to diamond/diamond", "blastp",
             "-q", f'{QPATH}/{query_genome_id}_nonredundant.faa',
             "-d", f'{TPATH}/{target_tax_id}', 
             "-o", full_out_path,

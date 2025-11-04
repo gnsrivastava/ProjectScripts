@@ -12,11 +12,11 @@
 **Step 2: For STRING bacteria strains create BlastpDB using diamond** 
 - Run this script within the folder containing all the fasta files of each bacterial strain in STRINGdb v12
 ```
+# Location of the fasta files StringSeqsOrg
 ls *.fa | parallel --jobs 64 ' 
-file={} 
-  base_name=$(basename "$file" .fa | cut -d"." -f1) 
-  mkdir -p "$base_name" 
-  $diamond makedb --in "$file" -d "$base_name" 
+  file={} 
+    base_name=$(basename "$file" .fa | cut -d"." -f1)
+    location_to_diamond_installation/diamond makedb --in "$file" -d "$base_name" 
 '
 mv *.dmnd ../StringSeqsDiamond
 ```
